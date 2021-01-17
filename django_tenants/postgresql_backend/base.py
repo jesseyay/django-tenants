@@ -14,7 +14,12 @@ import psycopg2
 DatabaseError = django.db.utils.DatabaseError
 IntegrityError = psycopg2.IntegrityError
 
-ORIGINAL_BACKEND = getattr(settings, 'ORIGINAL_BACKEND', 'django.db.backends.postgresql')
+# Changed to use postgis as default backend
+# https://stackoverflow.com/a/47028873
+# ORIGINAL_BACKEND = getattr(settings, 'ORIGINAL_BACKEND', 'django.db.backends.postgresql')
+ORIGINAL_BACKEND = getattr(
+    settings, "ORIGINAL_BACKEND", "django.contrib.gis.db.backends.postgis"
+)
 
 original_backend = import_module(ORIGINAL_BACKEND + '.base')
 
