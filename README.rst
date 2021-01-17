@@ -14,6 +14,8 @@ django-tenants
 .. image:: https://readthedocs.org/projects/pip/badge/?version=latest
     :target: https://django-tenants.readthedocs.io/en/latest/
 
+CHANGED TO USE POSTGIS BACKEND
+
 This application enables `django`_ powered websites to have multiple
 tenants via `PostgreSQL schemas`_. A vital feature for every
 Software-as-a-Service (SaaS) website.
